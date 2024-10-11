@@ -18,14 +18,6 @@ export default function Weather() {
     return <p className='text-blue-500 text-lg font-semibold'>Loading ...</p>;
   }
 
-  if (error) {
-    return (
-      <p className='text-red-500 text-lg font-semibold'>
-        Error: {error.message}
-      </p>
-    );
-  }
-
   const { currentWeather, forecast } = data || {};
 
   const handleSearch = (e) => {
