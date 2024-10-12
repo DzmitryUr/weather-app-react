@@ -1,6 +1,6 @@
 # Weather App (React)
 
-This is a simple weather application built using **React** with **Vite**, styled using **Tailwind CSS**, and fetching weather data from the **OpenWeather API**.
+This is a weather application built using **React** with **Vite**, styled using **Tailwind CSS**, and fetching weather data from the **OpenWeather API**.
 
 The app utilizes the `navigator.geolocation` object to retrieve the user's current location, and a custom hook `useGeolocation` was created to handle and provide the user's coordinates. The app also leverages **Axios** for API requests, **Tanstack Query** (formerly React Query) for data fetching and caching, **JSX** for structuring components, and **React Hooks** for state and effect management.
 
@@ -12,17 +12,18 @@ The app utilizes the `navigator.geolocation` object to retrieve the user's curre
 - Custom `useGeolocation` hook for managing geolocation data.
 - Utilizes **Axios** for handling API requests.
 - Uses **Tanstack Query** for efficient data fetching and caching.
+- Custom `useFetchWeather` hook for managing weather data.
 - Built with **JSX** and **React Hooks** (useState, useEffect) for smooth component management.
 - Responsive design using Tailwind CSS.
 - Fetches data from the OpenWeather API.
 
 ## Demo
 
-You can view a live demo of the app [here](#). (Add link to your deployed application if applicable.)
+You can view a live demo of the app [here](https://dzmitryur.github.io/weather-app-react/).
 
 ## Screenshots
 
-(Insert relevant screenshots here.)
+<img src="./assets/Screenshot-Weather-App.png" alt="Screenshot of the Weather App" width="500"/>
 
 ## Technologies Used
 
@@ -52,7 +53,7 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/weather-app-react.git
+   git clone https://github.com/DzmitryUr/weather-app-react.git
    cd weather-app-react
    ```
 
@@ -68,7 +69,7 @@ Make sure you have the following installed:
    VITE_API_KEY=your_openweather_api_key
    ```
 
-You can get your API key by signing up at [OpenWeather](https://openweathermap.org/).
+   You can get your API key by signing up at [OpenWeather](https://openweathermap.org/).
 
 4. Start the development server:
 
