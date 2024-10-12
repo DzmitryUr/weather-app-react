@@ -34,7 +34,7 @@ You can view a live demo of the app [here](https://dzmitryur.github.io/weather-a
 - **Axios**: Promise-based HTTP client for making requests to the OpenWeather API
 - **Tanstack Query**: Data fetching, caching, and synchronization for handling asynchronous operations
 - **JSX**: Syntax extension for writing HTML in JavaScript
-- **React Hooks**: Custom and built-in hooks for managing component logic (e.g., `useGeolocation`, `useState`, `useEffect`)
+- **React Hooks**: Custom and built-in hooks for managing component logic (e.g., `useGeolocation`, `useFetchWeather`, `useState`, `useEffect`)
 - **navigator.geolocation**: To access the user's current coordinates
 
 ## Installation and Setup
@@ -63,7 +63,7 @@ Make sure you have the following installed:
    npm install
    ```
 
-3. Create a .env file at the root of the project and add your OpenWeather API Key:
+3. Create a .env.local file at the root of the project and add your OpenWeather API Key:
 
    ```bash
    VITE_API_KEY=your_openweather_api_key
@@ -82,3 +82,29 @@ Make sure you have the following installed:
    ```bash
    http://localhost:5173
    ```
+
+## Usage
+
+- Enter the name of the city in the search bar or allow the app to access your location.
+- The app will display the current weather information including temperature, humidity, and wind speed.
+- The weather data is fetched in real-time from the **OpenWeather API** using **Axios**.
+- **Tanstack Query** is used for caching and synchronizing the fetched data.
+- If location access is granted, the app will use the `useGeolocation` hook to retrieve your coordinates and display the weather for your current location.
+
+## Contributing
+
+If you'd like to contribute, feel free to create a pull request or open an issue to discuss the changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+- [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [OpenWeather API](https://openweathermap.org/)
+- [Axios](https://axios-http.com/)
+- [Tanstack Query](https://tanstack.com/query/latest)
+- [navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
