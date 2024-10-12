@@ -19,7 +19,7 @@ You can view a live demo of the app [here](https://dzmitryur.github.io/weather-a
 
 ## Screenshots
 
-(Insert relevant screenshots here.)
+![Screenshot of the Weather App](./assets/Screenshot-Weather-App.png)
 
 ## Technologies Used
 
@@ -49,3 +49,29 @@ Make sure you have the following installed:
    git clone https://github.com/DzmitryUr/weather-app-react.git
    cd weather-app-react
    ```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a .env file at the root of the project and add your OpenWeather API Key:
+
+```bash
+VITE_API_KEY=your_openweather_api_key
+```
+
+You can get your API key by signing up at [OpenWeather](https://openweathermap.org/).
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+5. Open the app in your browser:
+
+```bash
+http://localhost:5173
+```
