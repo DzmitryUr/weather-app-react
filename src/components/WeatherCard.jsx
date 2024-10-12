@@ -33,7 +33,7 @@ export function WeatherCard({ data }) {
 
       <div className='flex justify-between text-sm w-full max-w-md'>
         <div className='text-center'>
-          Wind <br /> {Math.round(wind.speed)}
+          Wind <br /> {Math.round(wind.speed)} m/s
         </div>
         <div className='text-center'>
           Humidity <br /> {main.humidity}%
