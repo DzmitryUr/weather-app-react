@@ -21,6 +21,16 @@ The app utilizes the `navigator.geolocation` object to retrieve the user's curre
 
 You can view a live demo of the app [here](https://dzmitryur.github.io/weather-app-react/).
 
+## Watch on YouTube:
+
+You can watch a YouTube video on how to build Weather App
+
+<div align="left">
+      <a href="https://youtu.be/rJqAmxqKNiw">
+         <img src="https://img.youtube.com/vi/rJqAmxqKNiw/0.jpg" alt="Watch Quiz App on YouTube">
+      </a>
+</div>
+
 ## Screenshots
 
 <img src="./assets/Screenshot-Weather-App.png" alt="Screenshot of the Weather App" width="500"/>
