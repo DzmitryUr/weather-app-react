@@ -3,10 +3,11 @@ import { useFetchWeather } from '../hooks/useFetchWeather';
 import useGeolocation from '../hooks/useGeolocation';
 import { WeatherCard } from './WeatherCard';
 import { Forecast } from './Forecast';
+import { SearchBar } from './SearchBar';
+import { Error } from './Error';
 
 export default function Weather() {
   const { loading, error, data: geoData } = useGeolocation();
-  const [city, setCity] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const {
     data,
@@ -14,40 +15,19 @@ export default function Weather() {
     isLoading: apiLoading,
   } = useFetchWeather(geoData, searchQuery);
 
-  if (loading) {
+  if (loading || apiLoading) {
     return <p className='text-blue-500 text-lg font-semibold'>Loading ...</p>;
   }
 
   const { currentWeather, forecast } = data || {};
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (city.trim()) {
-      console.log('city=', city);
-      setSearchQuery(city.trim());
-    }
-  };
-
   return (
     <div>
-      {error && <p>{error.message}</p>}
-      {apiError && <p>{apiError.message}</p>}
+      {error && <Error message={error.message} />}
+      {apiError && <Error message={apiError.message} />}
+
       <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
-        <form onSubmit={handleSearch}>
-          <input
-            type='text'
-            placeholder='Enter city name'
-            className='p-2 border border-gray-300 rounded'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <button
-            type='submit'
-            className='ml-2 p-2 bg-blue-500 text-white rounded'
-          >
-            Search
-          </button>
-        </form>
+        <SearchBar setSearchQuery={setSearchQuery} />
       </div>
 
       {currentWeather && (
