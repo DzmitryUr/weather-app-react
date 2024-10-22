@@ -27,7 +27,7 @@ You can watch a YouTube video on how to build Weather App
 
 <div align="left">
       <a href="https://youtu.be/rJqAmxqKNiw">
-         <img src="https://img.youtube.com/vi/rJqAmxqKNiw/0.jpg" alt="Watch Quiz App on YouTube">
+         <img src="https://img.youtube.com/vi/rJqAmxqKNiw/0.jpg" alt="Watch Weather App on YouTube">
       </a>
 </div>
 
