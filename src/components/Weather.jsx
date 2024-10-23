@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useFetchWeather } from '../hooks/useFetchWeather';
+import ReactGA from 'react-ga4';
 import useGeolocation from '../hooks/useGeolocation';
 import { WeatherCard } from './WeatherCard';
 import { Forecast } from './Forecast';
@@ -25,6 +26,11 @@ export default function Weather() {
     if (city.trim()) {
       console.log('city=', city);
       setSearchQuery(city.trim());
+      ReactGA.event({
+        category: 'Search Bar',
+        action: 'City_provided',
+        label: city,
+      });
     }
   };
 
