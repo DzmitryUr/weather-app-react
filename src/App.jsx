@@ -5,15 +5,18 @@ import Weather from './components/Weather';
 import { useEffect } from 'react';
 
 const queryClient = new QueryClient();
+const analyticsID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
 
 function App() {
   useEffect(() => {
-    ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
+    if (analyticsID) {
+      ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
 
-    ReactGA.send({
-      hitType: 'pageview',
-      page: window.location.pathname,
-    });
+      ReactGA.send({
+        hitType: 'pageview',
+        page: window.location.pathname,
+      });
+    }
   }, []);
   return (
     <QueryClientProvider client={queryClient}>
