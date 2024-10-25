@@ -3,6 +3,7 @@ import ReactGA from 'react-ga4';
 import './App.css';
 import Weather from './components/Weather';
 import { useEffect } from 'react';
+import { Toast } from './components/Toast';
 
 const queryClient = new QueryClient();
 const analyticsID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
