@@ -73,13 +73,14 @@ Make sure you have the following installed:
    npm install
    ```
 
-3. Create a .env.local file at the root of the project and add your OpenWeather API Key:
+3. Create a .env.local file at the root of the project and add your OpenWeather API Key and Google Analytics ID(optional):
 
    ```bash
    VITE_API_KEY=your_openweather_api_key
    ```
 
    You can get your API key by signing up at [OpenWeather](https://openweathermap.org/).
+   You can use file `.env.example` as an example
 
 4. Start the development server:
 
