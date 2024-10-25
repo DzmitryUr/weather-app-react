@@ -25,7 +25,6 @@ export default function Weather() {
   const handleSearch = (e) => {
     e.preventDefault();
     if (city.trim()) {
-      console.log('city=', city);
       setSearchQuery(city.trim());
       ReactGA.event({
         category: 'Search Bar',
