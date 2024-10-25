@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { useFetchWeather } from '../hooks/useFetchWeather';
-import ReactGA from 'react-ga4';
-import useGeolocation from '../hooks/useGeolocation';
+import { useGeolocation } from '../hooks/useGeolocation';
 import { WeatherCard } from './WeatherCard';
 import { Forecast } from './Forecast';
 import { Toast } from './Toast';
+import { SearchBar } from './SearchBar';
 
 export default function Weather() {
   const { loading, error: geoError, data: geoData } = useGeolocation();
-  const [city, setCity] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const {
     data,
@@ -22,39 +21,12 @@ export default function Weather() {
 
   const { currentWeather, forecast } = data || {};
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (city.trim()) {
-      setSearchQuery(city.trim());
-      ReactGA.event({
-        category: 'Search Bar',
-        action: 'City_provided',
-        label: city,
-      });
-    }
-  };
-
   return (
     <div>
       {geoError && <Toast message={geoError.message} type='warning' />}
       {apiError && <Toast message={apiError.message} type='error' />}
-      <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
-        <form onSubmit={handleSearch}>
-          <input
-            type='text'
-            placeholder='Enter city name'
-            className='p-2 border border-gray-300 rounded'
-            value={city}
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <button
-            type='submit'
-            className='ml-2 p-2 bg-blue-500 text-white rounded'
-          >
-            Search
-          </button>
-        </form>
-      </div>
+
+      <SearchBar setSearchQuery={setSearchQuery} />
 
       {currentWeather && (
         <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full'>
