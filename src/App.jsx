@@ -23,22 +23,22 @@ function App() {
     <QueryClientProvider client={queryClient}>
       {/* <Weather /> */}
       <Toast
-        message='This is a dismissable success message!'
+        message='This is a disappearing success message!'
         type='success'
         duration={2000}
       />
       <Toast
-        message='This is a dismissable info message!'
+        message='This is a disappearing info message!'
         type='info'
         duration={3000}
       />
       <Toast
-        message='This is a dismissable warning message!'
+        message='This is a disappearing warning message!'
         type='warning'
         duration={4000}
       />
       <Toast
-        message='This is a dismissable error message!'
+        message='This is a disappearing error message!'
         type='error'
         duration={5000}
       />
