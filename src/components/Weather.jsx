@@ -4,9 +4,10 @@ import ReactGA from 'react-ga4';
 import useGeolocation from '../hooks/useGeolocation';
 import { WeatherCard } from './WeatherCard';
 import { Forecast } from './Forecast';
+import { Toast } from './Toast';
 
 export default function Weather() {
-  const { loading, error, data: geoData } = useGeolocation();
+  const { loading, error: geoError, data: geoData } = useGeolocation();
   const [city, setCity] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const {
@@ -15,8 +16,8 @@ export default function Weather() {
     isLoading: apiLoading,
   } = useFetchWeather(geoData, searchQuery);
 
-  if (loading) {
-    return <p className='text-blue-500 text-lg font-semibold'>Loading ...</p>;
+  if (loading || apiLoading) {
+    return <Toast message='Loading ...' type='info' />;
   }
 
   const { currentWeather, forecast } = data || {};
@@ -36,8 +37,8 @@ export default function Weather() {
 
   return (
     <div>
-      {error && <p>{error.message}</p>}
-      {apiError && <p>{apiError.message}</p>}
+      {geoError && <Toast message={geoError.message} type='warning' />}
+      {apiError && <Toast message={apiError.message} type='error' />}
       <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
         <form onSubmit={handleSearch}>
           <input
