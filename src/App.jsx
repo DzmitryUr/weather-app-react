@@ -9,6 +9,8 @@ const analyticsID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
 
 function App() {
   useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.add('dark');
     if (analyticsID) {
       ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
 

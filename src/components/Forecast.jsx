@@ -4,8 +4,8 @@ import { getShortDate } from '../utils';
 export function Forecast({ forecast }) {
   return (
     <>
-      <h2 className='text-lg font-bold mb-4'>Forecast</h2>
-      <div className='flex flex-wrap gap-2'>
+      <h2 className='text-lg dark:text-white font-bold mb-4'>Forecast</h2>
+      <div className='flex dark:text-white flex-wrap gap-2'>
         {forecast.list.slice(0, 5).map((forecastItem, index) => {
           const { dt, weather, main, wind } = forecastItem;
           return (

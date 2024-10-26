@@ -17,7 +17,7 @@ export function SearchBar({ setSearchQuery }) {
   };
 
   return (
-    <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
+    <div className='bg-white dark:bg-gray-800 shadow-md p-2 rounded-lg mb-4 w-full'>
       <form onSubmit={handleSearch}>
         <input
           type='text'

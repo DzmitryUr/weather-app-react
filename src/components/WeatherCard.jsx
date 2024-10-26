@@ -4,7 +4,7 @@ import { getFormatedDate } from '../utils';
 export function WeatherCard({ data }) {
   const { name, main, sys, weather, wind } = data;
   return (
-    <div className='flex flex-col items-center'>
+    <div className='flex dark:text-white flex-col items-center'>
       <h2 className='text-lg font-bold'>
         {name}, {sys.country}
       </h2>

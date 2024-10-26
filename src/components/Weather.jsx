@@ -29,13 +29,13 @@ export default function Weather() {
       <SearchBar setSearchQuery={setSearchQuery} />
 
       {currentWeather && (
-        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full'>
+        <div className='bg-white dark:bg-gray-800 shadow-md p-6 rounded-lg mb-4 w-full'>
           <WeatherCard data={currentWeather} />
         </div>
       )}
 
       {forecast && (
-        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full'>
+        <div className='bg-white dark:bg-gray-800 shadow-md p-6 rounded-lg mb-4 w-full'>
           <Forecast forecast={forecast} />
         </div>
       )}
