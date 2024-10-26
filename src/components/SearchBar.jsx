@@ -17,22 +17,17 @@ export function SearchBar({ setSearchQuery }) {
   };
 
   return (
-    <div className='bg-white dark:bg-gray-800 shadow-md p-2 rounded-lg mb-4 w-full'>
-      <form onSubmit={handleSearch}>
-        <input
-          type='text'
-          placeholder='Enter city name'
-          className='p-2 border border-gray-300 rounded'
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button
-          type='submit'
-          className='ml-2 p-2 bg-blue-500 text-white rounded'
-        >
-          Search
-        </button>
-      </form>
-    </div>
+    <form onSubmit={handleSearch}>
+      <input
+        type='text'
+        placeholder='Enter city name'
+        className='p-2 border border-gray-300 rounded'
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+      <button type='submit' className='ml-2 p-2 bg-blue-500 text-white rounded'>
+        Search
+      </button>
+    </form>
   );
 }
