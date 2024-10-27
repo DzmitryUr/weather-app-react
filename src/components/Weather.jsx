@@ -26,7 +26,7 @@ export default function Weather() {
       {geoError && <Toast message={geoError.message} type='warning' />}
       {apiError && <Toast message={apiError.message} type='error' />}
 
-      <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
+      <div className='bg-white dark:bg-gray-800 shadow-md p-2 rounded-lg mb-4 w-full'>
         <SearchBar setSearchQuery={setSearchQuery} />
       </div>
 

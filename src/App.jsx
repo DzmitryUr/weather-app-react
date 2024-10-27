@@ -3,14 +3,13 @@ import ReactGA from 'react-ga4';
 import './App.css';
 import Weather from './components/Weather';
 import { useEffect } from 'react';
+import { Header } from './components/Header';
 
 const queryClient = new QueryClient();
 const analyticsID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
 
 function App() {
   useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.add('dark');
     if (analyticsID) {
       ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
 
@@ -20,8 +19,10 @@ function App() {
       });
     }
   }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
+      <Header />
       <Weather />
     </QueryClientProvider>
   );
