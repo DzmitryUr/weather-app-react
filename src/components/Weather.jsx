@@ -26,18 +26,18 @@ export default function Weather() {
       {geoError && <Toast message={geoError.message} type='warning' />}
       {apiError && <Toast message={apiError.message} type='error' />}
 
-      <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full'>
+      <div className='bg-white shadow-md p-2 rounded-lg mb-4 w-full dark:bg-gray-800'>
         <SearchBar setSearchQuery={setSearchQuery} />
       </div>
 
       {currentWeather && (
-        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full'>
+        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full dark:bg-gray-800 dark:text-white'>
           <WeatherCard data={currentWeather} />
         </div>
       )}
 
       {forecast && (
-        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full'>
+        <div className='bg-white shadow-md p-6 rounded-lg mb-4 w-full dark:bg-gray-800 dark:text-white'>
           <Forecast forecast={forecast} />
         </div>
       )}
