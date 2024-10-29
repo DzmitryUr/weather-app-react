@@ -11,7 +11,7 @@ const analyticsID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
 function App() {
   useEffect(() => {
     if (analyticsID) {
-      ReactGA.initialize(import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
+      ReactGA.initialize(analyticsID);
 
       ReactGA.send({
         hitType: 'pageview',
