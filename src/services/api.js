@@ -8,13 +8,13 @@ export const weatherIconUrl = 'https://openweathermap.org/img/wn/';
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
-export const fetchWeatherByCoords = async (geoData) => {
+export const fetchWeatherByCoords = async (geoData, units) => {
   if (!geoData?.latitude || !geoData?.longitude) return;
 
   const params = {
     lat: geoData.latitude,
     lon: geoData.longitude,
-    units: 'metric',
+    units,
     appid: apiKey,
   };
 
@@ -26,12 +26,12 @@ export const fetchWeatherByCoords = async (geoData) => {
   return { currentWeather: curent.data, forecast: forecast.data };
 };
 
-export const fetchWeatherByCity = async (searchQuery) => {
+export const fetchWeatherByCity = async (searchQuery, units) => {
   if (!searchQuery) return;
 
   const params = {
     q: searchQuery,
-    units: 'metric',
+    units,
     appid: apiKey,
   };
 

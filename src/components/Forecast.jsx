@@ -1,7 +1,10 @@
+import { useMetrics } from '../hooks/useMetrics';
 import { weatherIconUrl } from '../services/api';
 import { getShortDate } from '../utils';
 
 export function Forecast({ forecast }) {
+  const { metrics } = useMetrics();
+
   return (
     <>
       <h2 className='text-lg font-bold mb-4'>Forecast</h2>
@@ -17,9 +20,13 @@ export function Forecast({ forecast }) {
                   alt={weather[0].description}
                 />
               </div>
-              <p className='text-xl font-bold'>{Math.round(main.temp)}&deg;C</p>
+              <p className='text-xl font-bold'>
+                {Math.round(main.temp)}&deg;{metrics.temperature}
+              </p>
               <p className='font-semibold'>{weather[0].main}</p>
-              <div>{Math.round(wind.speed)} m/s</div>
+              <div>
+                {Math.round(wind.speed)} {metrics.wind}
+              </div>
             </div>
           );
         })}
