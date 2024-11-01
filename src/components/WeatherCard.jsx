@@ -1,8 +1,11 @@
+import { useMetrics } from '../hooks/useMetrics';
 import { weatherIconUrl } from '../services/api';
 import { getFormatedDate } from '../utils';
 
 export function WeatherCard({ data }) {
+  const { metrics } = useMetrics();
   const { name, main, sys, weather, wind } = data;
+
   return (
     <div className='flex flex-col items-center'>
       <h2 className='text-lg font-bold'>
@@ -19,7 +22,7 @@ export function WeatherCard({ data }) {
 
         <span className='text-4xl font-bold pr-6'>
           {Math.round(main.temp)}
-          <sup>&deg;C</sup>
+          <sup>&deg;{metrics.temperature}</sup>
         </span>
 
         <div className='text-rigth'>
@@ -33,7 +36,7 @@ export function WeatherCard({ data }) {
 
       <div className='flex justify-between text-sm w-full max-w-md'>
         <div className='text-center'>
-          Wind <br /> {Math.round(wind.speed)} m/s
+          Wind <br /> {Math.round(wind.speed)} {metrics.wind}
         </div>
         <div className='text-center'>
           Humidity <br /> {main.humidity}%
