@@ -36,12 +36,13 @@ You can watch a YouTube video on how to build Weather App
 
 ## Screenshots
 
-<div>
+### Light Mode
+
 <img src="./assets/Screenshot-Weather-App.png" alt="Screenshot of the Weather App" width="500"/>
-</div>
-<div style="padding-top:10px;">
+
+### Dark Mode
+
 <img src="./assets/Screenshot-Weather-App-NewYork.png" alt="Screenshot of the Weather App" width="500"/>
-</div>
 
 ## Technologies Used
 
