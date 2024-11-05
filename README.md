@@ -16,6 +16,9 @@ The app utilizes the `navigator.geolocation` object to retrieve the user's curre
 - Built with **JSX** and **React Hooks** (useState, useEffect) for smooth component management.
 - Responsive design using Tailwind CSS.
 - Fetches data from the OpenWeather API.
+- Google Analytics, npm package React Google Analytics 4
+- React Context API, hook useContext
+- React Icons
 
 ## Demo
 
@@ -33,7 +36,12 @@ You can watch a YouTube video on how to build Weather App
 
 ## Screenshots
 
+<div>
 <img src="./assets/Screenshot-Weather-App.png" alt="Screenshot of the Weather App" width="500"/>
+</div>
+<div style="padding-top:10px;">
+<img src="./assets/Screenshot-Weather-App-NewYork.png" alt="Screenshot of the Weather App" width="500"/>
+</div>
 
 ## Technologies Used
 
