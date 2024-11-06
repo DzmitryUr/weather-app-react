@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ReactGA from 'react-ga4';
 
 export function SearchBar({ setSearchQuery }) {
   const [city, setCity] = useState('');
@@ -8,11 +7,17 @@ export function SearchBar({ setSearchQuery }) {
     e.preventDefault();
     if (city.trim()) {
       setSearchQuery(city.trim());
-      ReactGA.event({
-        category: 'Search Bar',
-        action: 'City_provided',
-        label: city,
-      });
+      if (analyticsID) {
+        import('react-ga4').then((ReactGA4) => {
+          const { event } = ReactGA4.default; // Access default export
+
+          event({
+            category: 'Search Bar',
+            action: 'City_provided',
+            label: city,
+          });
+        });
+      }
     }
   };
 
