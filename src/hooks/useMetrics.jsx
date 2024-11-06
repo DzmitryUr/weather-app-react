@@ -20,17 +20,26 @@ export function MetricsProvider({ children }) {
   const [metrics, setMetrics] = useState(metric);
 
   useEffect(() => {
-    const metric = localStorage.getItem('metric');
+    const storedMetric = localStorage.getItem(METRIC);
+    console.log('storedMetric=', storedMetric);
 
-    if (metric === 'imperial') {
+    if (storedMetric === 'imperial') {
       setMetrics(imperial);
     }
   }, []);
 
   const toggleMetric = () => {
     setMetrics((currentMetric) => {
-      if (currentMetric.units === METRIC) return { ...imperial };
-      return { ...metric };
+      let newMetric = {};
+      const currentUnits = currentMetric.units;
+      if (currentUnits === METRIC) {
+        newMetric = { ...imperial };
+      } else {
+        newMetric = { ...metric };
+      }
+
+      localStorage.setItem(METRIC, newMetric.units);
+      return newMetric;
     });
   };
 

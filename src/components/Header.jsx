@@ -10,9 +10,19 @@ export function Header() {
   const { metrics, toggleMetric } = useMetrics();
 
   useEffect(() => {
+    const mode = localStorage.getItem('mode');
+    if (mode === 'dark') {
+      setDarkTheme(true);
+    }
+  }, []);
+
+  useEffect(() => {
     const root = document.documentElement;
     darkTheme ? root.classList.add('dark') : root.classList.remove('dark');
+    const mode = darkTheme ? 'dark' : 'light';
+    localStorage.setItem('mode', mode);
   }, [darkTheme]);
+
   return (
     <header className='flex justify-between items-center bg-white shadow-md p-2 rounded-lg mb-4 w-full dark:bg-gray-800 dark:text-white'>
       <h2 className='text-lg font-bold p-2 flex items-center'>
