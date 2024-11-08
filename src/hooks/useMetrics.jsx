@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const MetricsContext = createContext();
 
@@ -18,10 +18,26 @@ const imperial = {
 
 export function MetricsProvider({ children }) {
   const [metrics, setMetrics] = useState(metric);
+
+  useEffect(() => {
+    const storedMetric = localStorage.getItem(METRIC);
+
+    if (storedMetric === 'imperial') {
+      setMetrics(imperial);
+    }
+  }, []);
+
   const toggleMetric = () => {
     setMetrics((currentMetric) => {
-      if (currentMetric.units === METRIC) return { ...imperial };
-      return { ...metric };
+      let newMetric = {};
+      if (currentMetric.units === METRIC) {
+        newMetric = { ...imperial };
+      } else {
+        newMetric = { ...metric };
+      }
+
+      localStorage.setItem(METRIC, newMetric.units);
+      return newMetric;
     });
   };
 
