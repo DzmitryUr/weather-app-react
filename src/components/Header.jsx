@@ -30,6 +30,7 @@ export function Header() {
           href='https://github.com/DzmitryUr/weather-app-react'
           target='_blank'
           className='ml-3 text-3xl'
+          aria-label='Link to source code on GitHub'
         >
           <FaGithub />
         </a>
@@ -37,15 +38,20 @@ export function Header() {
           href='https://youtu.be/rJqAmxqKNiw'
           target='_blank'
           className='ml-3 text-3xl'
+          aria-label='Link to YouTube video'
         >
           <FaYoutube />
         </a>
       </h2>
       <div className='text-3xl'>
-        <button onClick={toggleMetric}>
+        <button onClick={toggleMetric} title='Unit'>
           {metrics.units === METRIC ? <RiFahrenheitFill /> : <RiCelsiusFill />}
         </button>
-        <button onClick={() => setDarkTheme(!darkTheme)} className='mr-3 ml-2'>
+        <button
+          onClick={() => setDarkTheme(!darkTheme)}
+          className='mr-3 ml-2'
+          title='Mode'
+        >
           {darkTheme ? <MdLightMode /> : <MdDarkMode />}
         </button>
       </div>
